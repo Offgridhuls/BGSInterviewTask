@@ -15,8 +15,18 @@ public class DialogueComponent : MonoBehaviour
             TriggerDialogue();
         }
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+
+        EndDialogue();
+
+    }
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+    }
+    public void EndDialogue()
+    {
+        FindObjectOfType<DialogueManager>().EndDialogue();
     }
 }

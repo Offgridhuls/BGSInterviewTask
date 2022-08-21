@@ -30,8 +30,6 @@ public class DialogueManager : MonoBehaviour
         }
         DisplayNextSentence();
     }
-   
-
     public void DisplayNextSentence()
     {
         
@@ -57,7 +55,7 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
     }
-    void EndDialogue()
+    public void EndDialogue()
     {
         animator.SetBool("isOpen", false);
     }
