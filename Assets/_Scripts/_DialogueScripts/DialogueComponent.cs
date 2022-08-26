@@ -17,9 +17,8 @@ public class DialogueComponent : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-
+        FindObjectOfType<Shop>().CloseShopGUI();
         EndDialogue();
-
     }
     public void TriggerDialogue()
     {
@@ -29,4 +28,5 @@ public class DialogueComponent : MonoBehaviour
     {
         FindObjectOfType<DialogueManager>().EndDialogue();
     }
+
 }

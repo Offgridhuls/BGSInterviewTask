@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 88543185632138346}
   - component: {fileID: 271773508036356942}
   m_Layer: 0
-  m_Name: Rogue_torso_01
+  m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: -6180699960651564708}
   - component: {fileID: -5252713789334027916}
   m_Layer: 0
-  m_Name: Rogue_01
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -523,8 +523,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats:
-    moneyCount: 0
+    moneyCount: 1000
   moveSpeed: 2
+  torso: {fileID: 271773508036356942}
+  hood: {fileID: 271773511162754554}
+  pelvis: {fileID: 271773509841035936}
 --- !u!70 &-6180699960651564708
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -598,7 +601,7 @@ GameObject:
   - component: {fileID: 88543186234989372}
   - component: {fileID: 271773509841035936}
   m_Layer: 0
-  m_Name: Rogue_pelvis_01
+  m_Name: Pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1186,7 +1189,7 @@ GameObject:
   - component: {fileID: 88543187571961826}
   - component: {fileID: 271773511162754554}
   m_Layer: 0
-  m_Name: Rogue_hood_01
+  m_Name: Hood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

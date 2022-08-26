@@ -7,6 +7,8 @@ public class DialogueManager : MonoBehaviour
 {
     public Animator animator;
 
+    public Shop shopGUI;
+
     public Text nameText;
     public Text dialogueText;
 
@@ -35,6 +37,10 @@ public class DialogueManager : MonoBehaviour
         
         if(dialogueSentence.Count == 0)
         {
+            if(shopGUI != null)
+            {
+                shopGUI.ToggleShopGUI();
+            }
             EndDialogue();
             return;
         }
@@ -55,12 +61,10 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(.01f);
         }
     }
+
     public void EndDialogue()
     {
         animator.SetBool("isOpen", false);
     }
-    void Update()
-    {
-        
-    }
+
 }

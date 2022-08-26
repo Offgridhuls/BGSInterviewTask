@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
     public PlayerStats playerStats;
+
+    public static PlayerBehaviour Instance { get; private set; }
+
+    public Text moneyText;
     // Start is called before the first frame update
     [SerializeField]
     private float moveSpeed = 1.0f;
@@ -13,11 +18,22 @@ public class PlayerBehaviour : MonoBehaviour
     private bool facingRight, 
         isRunning;
 
+    public SpriteRenderer torso, 
+        hood, 
+        pelvis;
+    
     private Animator playerAnimator;
     public readonly int isMovingHash = Animator.StringToHash("isMoving");
 
     private Vector2 inputVector;
     private Rigidbody2D rb;
+
+    private void Awake()
+    {
+        
+        moneyText = GameObject.Find("MoneyCountText").GetComponent<Text>();
+        Instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +65,8 @@ public class PlayerBehaviour : MonoBehaviour
             isRunning = false;
         }
         OnRun();
+
+        moneyText.text = "$" + playerStats.moneyCount.ToString();
     }
 
     public void OnMovement(InputValue value)
